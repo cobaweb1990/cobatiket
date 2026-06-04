@@ -1337,7 +1337,7 @@ window.submitOrder = async () => {
         reader.onload = async () => {
           try {
             // GANTI URL DI BAWAH DENGAN URL WEB APP GAS YANG SUDAH JADI
-            const gasUrl = "Ihttps://script.google.com/macros/s/AKfycbwX7AwJ4d2XpZrsBiHGBDqz020eDX2om-WxfdaJzv-UacpNZmByWBdLz_Tm2R3rQM3yjg/exec";
+            const gasUrl = "https://script.google.com/macros/s/AKfycbwX7AwJ4d2XpZrsBiHGBDqz020eDX2om-WxfdaJzv-UacpNZmByWBdLz_Tm2R3rQM3yjg/exec";
             
             const response = await fetch(gasUrl, { method: 'POST', body: JSON.stringify({ fileName: "Bukti_" + orderIds[0] + "_" + file.name, mimeType: file.type, base64: reader.result }) });
             const result = await response.json();
