@@ -22,7 +22,7 @@ import {
 import {
   getFirestore, collection, addDoc, query, where, onSnapshot,
   doc, updateDoc, getDocs, deleteDoc, orderBy, setDoc,
-  writeBatch, getDoc, limit, runTransaction, enableIndexedDbPersistence
+  writeBatch, getDoc, limit, runTransaction
 } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 import {
   getStorage, ref, uploadBytes, getDownloadURL
@@ -42,10 +42,6 @@ window.auth     = getAuth(app);
 window.db       = getFirestore(app);
 window.storage  = getStorage(app);
 window.provider = new GoogleAuthProvider();
-window.appId    = 'cobaweb90';
-
-// Aktifkan cache lokal Firestore — mempercepat load pertama & tahan koneksi putus sesaat
-enableIndexedDbPersistence(window.db).catch(() => {/* multi-tab atau browser lama: skip */});
 
 window.signInWithPopup    = signInWithPopup;
 window.onAuthStateChanged = onAuthStateChanged;
@@ -59,7 +55,6 @@ window.orderBy      = orderBy;     window.ref            = ref;
 window.uploadBytes  = uploadBytes; window.getDownloadURL = getDownloadURL;
 window.writeBatch   = writeBatch;  window.getDoc         = getDoc;
 window.limit        = limit;       window.runTransaction = runTransaction;
-window.enableIndexedDbPersistence = enableIndexedDbPersistence;
 </script>
 
 <style>
